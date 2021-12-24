@@ -96,18 +96,25 @@ const UserForm = () => {
       >
         {data.map((item) => {
           return (
-            <div style={{ width: "250px", border: "1px solid gray" }}>
+            <div
+              style={{
+                width: "250px",
+                border: "1px solid gray",
+                borderRadius: "10px"
+              }}
+            >
               <div>
                 <img
                   src={item.strMealThumb}
                   alt="img"
                   widht="300px"
                   height="250px"
+                  style={{ borderRadius: "10px" }}
                 />
               </div>
-              <h3>{item.idMeal}</h3>
-              <h4>{item.strMeal}</h4>
-              <p>{item.strCategory}</p>
+              <h3>Meal ID: {item.idMeal}</h3>
+              <h4>Meal Name: {item.strMeal}</h4>
+              <h4>Meal Category: {item.strCategory}</h4>
             </div>
           );
         })}
