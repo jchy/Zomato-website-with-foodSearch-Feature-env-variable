@@ -6,6 +6,10 @@ const UserForm = () => {
   const [data, setData] = useState([]);
 
   const handleSearch = (userInput) => {
+    console.log(process.env.REACT_APP_API_KEY);
+
+    var link = process.env.REACT_APP_API_KEY + userInput;
+    console.log(link);
     const config = {
       method: "get",
       url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${userInput}`
@@ -100,7 +104,9 @@ const UserForm = () => {
               style={{
                 width: "250px",
                 border: "1px solid gray",
-                borderRadius: "10px"
+                borderRadius: "10px",
+                background: "#FCCDCD ",
+                textAlign: "left"
               }}
             >
               <div>
@@ -112,9 +118,11 @@ const UserForm = () => {
                   style={{ borderRadius: "10px" }}
                 />
               </div>
-              <h3>Meal ID: {item.idMeal}</h3>
-              <h4>Meal Name: {item.strMeal}</h4>
-              <h4>Meal Category: {item.strCategory}</h4>
+              <p style={{ paddingLeft: "10px" }}>Meal ID: {item.idMeal}</p>
+              <p style={{ paddingLeft: "10px" }}>Meal Name: {item.strMeal}</p>
+              <p style={{ paddingLeft: "10px" }}>
+                Meal Category: {item.strCategory}
+              </p>
             </div>
           );
         })}
