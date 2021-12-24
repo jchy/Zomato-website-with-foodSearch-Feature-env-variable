@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
-import UserForm from "../../UserForm/UserForm";
+// import axios from "axios";
 
 const NavBar = () => {
   return (
@@ -39,9 +39,6 @@ const NavBar = () => {
           }}
         >
           <p>Discover the best food & drinks in Lucknow</p>
-        </div>
-        <div>
-          <UserForm />
         </div>
       </div>
     </>

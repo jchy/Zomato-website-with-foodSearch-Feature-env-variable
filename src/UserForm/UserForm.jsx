@@ -1,4 +1,30 @@
+import React, { useState } from "react";
+import axios from "axios";
+
 const UserForm = () => {
+  const [userInput, setUserInput] = useState("Arrabiata");
+  const [data, setData] = useState([]);
+
+  const handleSearch = (userInput) => {
+    const config = {
+      method: "get",
+      url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${userInput}`
+    };
+    return axios(config);
+  };
+
+  const handleChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    console.log(userInput);
+    handleSearch(userInput).then((res) => {
+      setData(res.data.meals);
+      console.log(data);
+    });
+  };
+
   return (
     <>
       <div
@@ -34,6 +60,7 @@ const UserForm = () => {
           </select>
           <input
             type="text"
+            onChange={handleChange}
             style={{
               padding: "20px",
               fontSize: "18px",
@@ -41,9 +68,49 @@ const UserForm = () => {
               border: "none",
               borderRadius: "10px"
             }}
-            placeholder="|    🔍 Search for restaurant, cuisine or a dish"
+            placeholder="| Search for cuisine or a dish"
+          />
+          <input
+            type="submit"
+            onClick={handleSubmit}
+            value="🔍  SEARCH"
+            style={{
+              padding: "20px",
+              fontSize: "18px",
+              width: "150px",
+              border: "none",
+              borderRadius: "10px"
+            }}
           />
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "86%",
+          margin: "auto",
+          gap: "1rem",
+          marginTop: "50px"
+        }}
+      >
+        {data.map((item) => {
+          return (
+            <div style={{ width: "250px", border: "1px solid gray" }}>
+              <div>
+                <img
+                  src={item.strMealThumb}
+                  alt="img"
+                  widht="300px"
+                  height="250px"
+                />
+              </div>
+              <h3>{item.idMeal}</h3>
+              <h4>{item.strMeal}</h4>
+              <p>{item.strCategory}</p>
+            </div>
+          );
+        })}
       </div>
     </>
   );

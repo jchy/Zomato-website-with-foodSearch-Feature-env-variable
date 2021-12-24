@@ -1,7 +1,18 @@
 import React, { Component } from "react";
+import UserForm from "../UserForm/UserForm";
+
 const Home = () => {
   return (
     <>
+      <div
+        style={{
+          textAlign: "center",
+          padding: "100px",
+          background: "cornsilk"
+        }}
+      >
+        <UserForm />
+      </div>
       <div>
         <div
           style={{
