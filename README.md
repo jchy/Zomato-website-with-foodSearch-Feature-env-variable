@@ -1,5 +1,5 @@
 # Zomato-website-with-foodSearch-Feature-env-variable
- Heroku deployed link : https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version
+ Heroku deployed link : https://zomato-website-mini-version.herokuapp.com/
 
 Signin and Signup are static pages
 Add restaurant is also static page
