@@ -1,5 +1,12 @@
+.navParent {
+  background-image: url("/images/NavBarBg.jpeg");
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .navbar {
-  border: 1px solid gray;
+  /* border-bottom: 1px solid white; */
   display: flex;
   height: 40px;
   padding: 20px;
@@ -9,8 +16,9 @@
 
 .navbarLink {
   text-decoration: none;
-  background: teal;
+  /* background: teal; */
   color: white;
+  font-size: 18px;
   /* height: 30px; */
   /* width: 150px; */
   padding: 10px;
