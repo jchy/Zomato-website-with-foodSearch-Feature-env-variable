@@ -6,10 +6,10 @@ const UserForm = () => {
   const [data, setData] = useState([]);
 
   const handleSearch = (userInput) => {
-    console.log(process.env.REACT_APP_API_KEY);
+    // console.log(process.env.REACT_APP_API_KEY);
 
-    var link = process.env.REACT_APP_API_KEY + userInput;
-    console.log(link);
+    // var link = process.env.REACT_APP_API_KEY + userInput;
+    // console.log(link);
     const config = {
       method: "get",
       url: `https://www.themealdb.com/api/json/v1/1/search.php?s=${userInput}`
