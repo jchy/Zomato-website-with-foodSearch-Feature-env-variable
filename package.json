@@ -17,8 +17,8 @@
     "typescript": "4.1.3"
   },
   "scripts": {
-    "start": " react-scripts start",
-    "build": "CI='' react-scripts build",
+    "start": "env-cmd react-scripts start",
+    "build": "CI='' env-cmd react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
